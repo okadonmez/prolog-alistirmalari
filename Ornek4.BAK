@@ -1,0 +1,135 @@
+atasi_mi(X, Y) :-
+            ebeveyni(X, Y);
+            ebeveyni(X, Z),
+            ebeveyni(Z, Y);
+            ebeveyni(X, Z),
+            ebeveyni(Z, T),
+            ebeveyni(T, Y).
+            
+kardesi_mi(X, Y) :-
+              ebeveyni(Z, X),
+              ebeveyni(Z, Y),
+              X \= Y.
+              
+soyundan_mi(Y, X) :-
+            ebeveyni(X, Y);
+            ebeveyni(X, Z),
+            ebeveyni(Z, Y);
+            ebeveyni(X, Z),
+            ebeveyni(Z, T),
+            ebeveyni(T, Y).
+               
+cocugu_var_mi(X) :-
+                 ebeveyni(X, _).
+                 
+teyzesi_mi(X, Y) :-
+              ebeveyni(Z, Y),
+              kardesi_mi(Z, X),
+              kadin(X),
+              kadin(Z).
+              
+amcasi_mi(X, Y) :-
+             ebeveyni(Z, Y),
+             kardesi_mi(Z, X),
+             erkek(X),
+             erkek(Z).
+             
+dayisi_mi(X, Y) :-
+             ebeveyni(Z, Y),
+             kardesi_mi(Z, X),
+             erkek(X),
+             kadin(Z).
+             
+halasi_mi(X, Y) :-
+             ebeveyni(Z, Y),
+             kardesi_mi(Z, X),
+             kadin(X),
+             erkek(Z).
+             
+yengesi_mi(X, Y) :-
+              kardesi_mi(Z, X),
+              ebeveyni(Z, Y),
+              kadin(X).
+              
+%Aile 1 Baslangic
+ebeveyni(ali, asli).
+ebeveyni(ali, leyla).
+ebeveyni(ali, sirin).
+
+ebeveyni(ayse, asli).
+ebeveyni(ayse, leyla).
+ebeveyni(ayse, sirin).
+%Aile 1 Bitis
+
+%Aile 2 Baslangic
+ebeveyni(hasan, mecnun).
+ebeveyni(hasan, ferhat).
+ebeveyni(hasan, kerem).
+
+ebeveyni(fatma, mecnun).
+ebeveyni(fatma, ferhat).
+ebeveyni(fatma, kerem).
+%Aile 2 Bitis
+
+%Aile 3 Baslangic
+ebeveyni(kerem, kaan).
+ebeveyni(kerem, kerim).
+
+ebeveyni(asli, kaan).
+ebeveyni(asli, kerim).
+%Aile 3 Bitis
+
+%Aile 4 Baslangic
+ebeveyni(mecnun, lale).
+ebeveyni(mecnun, cicek).
+ebeveyni(mecnun, tosun).
+
+ebeveyni(leyla, lale).
+ebeveyni(leyla, cicek).
+ebeveyni(leyla, tosun).
+%Aile 4 Bitis
+
+%Aile 5 Baslangic
+ebeveyni(ferhat, kaya).
+
+ebeveyni(sirin, kaya).
+%Aile 5 Bitis
+
+%Aile 6 Baslangic
+ebeveyni(kerim, hakan).
+ebeveyni(kerim, abdullah).
+ebeveyni(kerim, melisa).
+
+ebeveyni(cicek, hakan).
+ebeveyni(cicek, abdullah).
+ebeveyni(cicek, melisa).
+%Aile 6 Bitis
+
+%Cinsiyet Baslangic
+erkek(ali).
+erkek(hasan).
+erkek(mecnun).
+erkek(ferhat).
+erkek(kerem).
+erkek(kaan).
+erkek(kerim).
+erkek(tosun).
+erkek(kaya).
+erkek(hakan).
+erkek(abdullah).
+
+kadin(ayse).
+kadin(fatma).
+kadin(asli).
+kadin(leyla).
+kadin(sirin).
+kadin(lale).
+kadin(cicek).
+kadin(melisa).
+%Cinsiyet Bitis
+
+/*
+?- ebeveyni(ali, asli).
+
+?- ebeveyni(ali, asli), kadin(asli), erkek(kaan).
+*/

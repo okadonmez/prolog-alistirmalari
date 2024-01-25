@@ -1,0 +1,11 @@
+sever(ali, veli).
+sever(ali, ayse).
+sever(veli, ali).
+
+kanka(X, Y) :-
+         sever(X, Y),
+         sever(Y, X).
+
+arkadas(X, Y) :-
+         sever(X, Y);
+         sever(Y, X).
