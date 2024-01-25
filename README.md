@@ -5,7 +5,7 @@
 
 :eye: Icindekiler :black_heart: Yapim tarihi :eye:
 
-- AritmetikOperatorler :orange_heart: 29.10.2021
+- AritmetikOperatorler :orange_heart: 08.01.2024
 
 - Gercekler :green_heart: 08.01.2024
 
